@@ -6,21 +6,15 @@
 // notToBe(val) accepts another value and returns true if the two values !== each other. If they are equal, it should throw an error "Equal".
 
 // Solution
-var expect = function (val) {
-  return {
-    toBe: (val2) => {
-      if (val !== val2) {
-        throw new Error("Not Equal");
-      } else {
-        return true;
-      }
-    },
-    notToBe: (val2) => {
-      if (val === val2) {
-        throw new Error("equal");
-      } else {
-        return true;
-      }
-    },
-  };
+var expect = function(val) {
+    return {
+        toBe: (val2) => {
+            if (val !== val2) throw new Error("Not Equal");
+            else return true;
+        },
+        notToBe: (val2) => {
+            if (val === val2) throw new Error("Equal");
+            else return true;
+        }
+    }
 };
